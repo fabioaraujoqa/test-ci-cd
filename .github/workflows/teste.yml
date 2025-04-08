@@ -1,26 +1,24 @@
-name: Teste Cypress
+name: ci-test
 
-on: 
+on:
   push:
-    branches:
-      - main
-  workflow_dispatch:
+    branches: ["main"]
 
 jobs:
-  Cypress-run:
-    runs-on: ubuntu:latest
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [18.x]
+        
 
     steps:
-      - name: Checkout no código
-        uses: actions/checkout@v4
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+      - uses: actions/checkout@v4
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
         with:
-          node-version: 18
-
-      - name: Instalar dependências
-        run: npm install
-
-      - name: Executar testes
-        run: npm run test
+          node-version: ${{ matrix.node-version }}
+          cache: "npm"
+      - run: npm install --force
+      - run: npm test
