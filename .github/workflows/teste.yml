@@ -25,6 +25,11 @@ jobs:
       - name: Executar testes
         run: npm run test
 
-      - name: Executar relatório
-        run: npm run report
- 
+      - name: Gerar relatório Allure
+        run: npm run report:generate
+
+      - name: Publicar no GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: allure-report
