@@ -21,14 +21,6 @@ jobs:
 
       - name: Instalar dependências
         run: npm install
-          
-      - name: Configurar locale do sistema para pt-BR
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y language-pack-pt
-          sudo locale-gen pt_BR.UTF-8
-          sudo update-locale LANG=pt_BR.UTF-8
-          export LANG=pt_BR.UTF-8
 
       - name: Executar testes
         run: npm run test

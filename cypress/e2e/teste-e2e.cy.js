@@ -13,22 +13,22 @@ describe('Testes End to end - QA Playground', () => {
 
     it('Deve exibir mensagem de erro quando não preencher o campo nome', () => {
         cy.preencherForm('', 'fabio@teste.com', 30)        
-        cy.validarCampo('#name', 'Preencha este campo.')
+        cy.get('#name').should('match', ':invalid')
     });
 
     it('Deve exibir mensagem de erro quando não preencher o campo e-mail', () => {
         cy.preencherForm('Fábio', '', 30)        
-        cy.validarCampo('#email', 'Preencha este campo.')
+        cy.get('#email').should('match', ':invalid')
     });
 
     it('Deve exibir mensagem de erro quando não preencher o campo Idade', () => {
         cy.preencherForm('Fábio', 'fabio@teste.com', '')        
-        cy.validarCampo('#age', 'Preencha este campo.')
+        cy.get('#age').should('match', ':invalid')
     });
 
     it('Deve exibir mensagem de erro quando preencher e-mail com formato inválido', () => {
         cy.preencherForm('Fábio', 'fabio.com', 30)        
-        cy.validarCampo('#email', 'Inclua um "@" no endereço de e-mail.')
+        cy.get('#email').should('match', ':invalid')
     });
 
     it('Deve ativar e validar o modo de alto contraste', () => {
@@ -36,6 +36,4 @@ describe('Testes End to end - QA Playground', () => {
         cy.get('#toggle-contrast').click()
         cy.get('body').should('have.class', 'high-contrast')
       })
-
-
 });

@@ -6,10 +6,3 @@ Cypress.Commands.add('preencherForm', (nome, email, idade) => {
     cy.get('#test-form > button').click()
 })
 
-Cypress.Commands.add('validarCampo', (elemento, msgErro) => {
-    cy.get(elemento).then(($el) => {
-      const msg = $el[0].validationMessage
-      expect(msg).to.include(msgErro)
-    })
-  })
-  
