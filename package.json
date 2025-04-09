@@ -3,12 +3,11 @@
   "version": "1.0.0",
   "description": "Modelo de automação simples para exemplo de execução no CI do GitHub Actions",
   "main": "index.js",
-  "scripts": {
-    "test": "npx cypress run --browser chrome", 
-    "report": "allure serve --clean allure-results",
-    "report:generate": "allure generate --clean allure-results -o allure-report"
-
-  },
+"scripts": {
+  "test": "npx cypress run --browser chrome",
+  "report": "npx allure serve --clean allure-results",
+  "report:generate": "npx allure generate --clean allure-results -o allure-report"
+},
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -16,6 +15,7 @@
     "cypress": "^14.2.1"
   },
   "devDependencies": {
+    "allure-commandline": "^2.33.0",
     "allure-cypress": "^3.2.1"
   }
 }
