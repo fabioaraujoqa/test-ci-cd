@@ -6,6 +6,10 @@ describe('Testes End to end - QA Playground', () => {
         cy.visit('playground-html')
     });
     
+    afterEach(() => {
+        cy.screenshot()
+    });
+    
     it('Deve preencher o formulário com sucesso', () => {
         cy.preencherForm('Fábio', 'fabio@teste.com', 30)
         cy.get('#form-feedback').should('contain', 'Formulário enviado com sucesso!')
@@ -36,4 +40,11 @@ describe('Testes End to end - QA Playground', () => {
         cy.get('#toggle-contrast').click()
         cy.get('body').should('have.class', 'high-contrast')
       })
+
+    it('Deve dar um erro do JS', () => {
+        var a = 2
+        var b = 3
+        var soma = a + b
+        expect(soma).to.equal(6)
+    });
 });
