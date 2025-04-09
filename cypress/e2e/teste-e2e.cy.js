@@ -12,7 +12,7 @@ describe('Testes End to end - QA Playground', () => {
     
     it('Deve preencher o formulário com sucesso', () => {
         cy.preencherForm('Fábio', 'fabio@teste.com', 30)
-        cy.get('#form-feedback').should('contain', 'Formulário enviado com sucesso!')
+        cy.get('#form-feedback').should('contain', 'Formulário enviado com qqsucesso!')
     });
 
     it('Deve exibir mensagem de erro quando não preencher o campo nome', () => {
