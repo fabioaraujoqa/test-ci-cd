@@ -13,12 +13,18 @@ describe('Testes End to end - QA Playground', () => {
 
     it('Deve exibir mensagem de erro quando não preencher o campo nome', () => {
         cy.preencherForm('', 'fabio@teste.com', 30)        
-        cy.validarCampo('#name', 'Preencha este campo.')
+        cy.validarCampo('#name', [
+            'Preencha este campo.',
+            'Please fill out this field.'
+          ])
     });
 
     it('Deve exibir mensagem de erro quando não preencher o campo e-mail', () => {
-        cy.preencherForm('Fábio', '', 30)        
-        cy.validarCampo('#email', 'Preencha este campo.')
+        cy.preencherForm('Fábio', '', 30)     
+        cy.validarCampo('#name', [
+            'Preencha este campo.',
+            'Please fill out this field.'
+          ])   
     });
 
     it('Deve exibir mensagem de erro quando não preencher o campo Idade', () => {
