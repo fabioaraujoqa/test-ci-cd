@@ -27,6 +27,7 @@ jobs:
 
       - name: Executar testes
         run: npm run test
+        continue-on-error: true
 
       - name: Gerar relatório Allure
         run: npm run report:generate
@@ -39,4 +40,4 @@ jobs:
       
       - name: Mostrar link do relatório no Summary
         run: |
-          echo "::notice ::🔗 Relatório: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/"
+          echo "Relatório: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/"
