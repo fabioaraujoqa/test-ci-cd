@@ -24,3 +24,7 @@ jobs:
 
       - name: Executar testes
         run: npm run test
+
+      - name: Executar relatório
+        run: npm run report
+ 
