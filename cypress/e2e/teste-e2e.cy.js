@@ -41,10 +41,4 @@ describe('Testes End to end - QA Playground', () => {
         cy.get('body').should('have.class', 'high-contrast')
       })
 
-    it('Deve dar um erro do JS', () => {
-        var a = 2
-        var b = 3
-        var soma = a + b
-        expect(soma).to.equal(6)
-    });
 });
