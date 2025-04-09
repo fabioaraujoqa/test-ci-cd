@@ -36,3 +36,8 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: allure-report
+      
+      - name: Mostrar link do relatório
+        run: | 
+          echo "Relatório publicado em: "
+          echo "https://qa-impact.github.io/teste-ci-cd/"
