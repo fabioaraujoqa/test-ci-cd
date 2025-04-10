@@ -24,7 +24,6 @@ O objetivo é testar funcionalidades da página pública:
 
 - [Cypress](https://www.cypress.io/) para automação de testes E2E
 - [GitHub Actions](https://github.com/features/actions) como orquestrador CI
-- Cypress custom command `cy.preencherForm()` para reutilização de lógica
 
 ---
 
