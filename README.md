@@ -1,6 +1,6 @@
 # QA Playground – Testes Automatizados com Cypress e GitHub Actions
 
-[![Build Status](https://github.com/QA-Impact/teste-ci-cd/actions/workflows/ci-cypress-demo.yml/badge.svg)](https://github.com/QA-Impact/teste-ci-cd/actions)
+[![Build Status](https://github.com/QA-Impact/teste-ci-cd/actions/workflows/teste.yml/badge.svg)](https://github.com/QA-Impact/teste-ci-cd/actions)
 
 Este projeto demonstra testes end-to-end com [Cypress](https://www.cypress.io/) integrados com [GitHub Actions](https://github.com/features/actions) para executar automaticamente os testes ao realizar um push na branch `main`.
 
