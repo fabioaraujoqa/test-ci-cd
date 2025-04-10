@@ -1,80 +1,57 @@
-# teste-ci-cd
-Modelo de automação simples para exemplo de execução no CI do GitHub Actions
+# QA Playground – Testes Automatizados com Cypress e GitHub Actions
 
-✅ Opção mais comum e poderosa: Allure Reports
-1. Instale os pacotes:
+[![Build Status](https://github.com/QA-Impact/teste-ci-cd/actions/workflows/ci-cypress-demo.yml/badge.svg)](https://github.com/QA-Impact/teste-ci-cd/actions)
 
-npm install -D @shelex/cypress-allure-plugin allure-commandline
-2. Configure o cypress.config.js:
+Este projeto demonstra testes end-to-end com [Cypress](https://www.cypress.io/) integrados com [GitHub Actions](https://github.com/features/actions) para executar automaticamente os testes ao realizar um push na branch `main`.
 
-const { defineConfig } = require('cypress');
+O objetivo é testar funcionalidades da página pública:  
+🔗 https://qa-impact.github.io/playground-html/
 
-module.exports = defineConfig({
-  e2e: {
-    setupNodeEvents(on, config) {
-      require('@shelex/cypress-allure-plugin/writer')(on, config);
-      return config;
-    },
-    baseUrl: 'https://qa-impact.github.io/',
-    specPattern: 'cypress/e2e/**/*.cy.{js,ts}',
-  },
-  reporter: 'cypress-allure-plugin',
-  reporterOptions: {
-    outputDir: 'allure-results',
-    overwrite: true,
-    clean: true,
-  },
-});
+---
 
-3. No cypress/support/e2e.js:
+## 🧪 Funcionalidades testadas
 
-import '@shelex/cypress-allure-plugin';
-4. Scripts no package.json:
-json
-Copiar
-Editar
-"scripts": {
-  "test": "cypress run",
-  "report:generate": "allure generate allure-results --clean -o allure-report",
-  "report:open": "allure open allure-report"
-}
-5. Rodar:
+- Preenchimento e validação de formulário
+  - Campos obrigatórios (nome, e-mail e idade)
+  - Formato de e-mail inválido
+  - Feedback de envio
+  - Acessibilidade
+  - Validação do botão de contraste alto
 
-npm run test
-npm run report:generate
-npm run report:open   # ou publique o conteúdo da pasta allure-report
-🌐 Publicando o relatório
-✅ No GitHub Pages:
-Configure o deploy do repositório para publicar o conteúdo da pasta allure-report/.
+---
 
-Ou use um GitHub Action para gerar e publicar automaticamente (posso montar um pra você).
+## ⚙️ Tecnologias utilizadas
 
-🧠 Alternativa mais simples: cypress-mochawesome-reporter
-Se preferir algo mais direto e só com HTML simples:
+- [Cypress](https://www.cypress.io/) para automação de testes E2E
+- [GitHub Actions](https://github.com/features/actions) como orquestrador CI
+- Cypress custom command `cy.preencherForm()` para reutilização de lógica
 
-1. Instale:
+---
 
-npm install -D mochawesome mochawesome-merge mochawesome-report-generator cypress-mochawesome-reporter
-2. No cypress.config.js:
+## 🚀 Como rodar o projeto localmente
 
-reporter: 'cypress-mochawesome-reporter',
-reporterOptions: {
-  charts: true,
-  reportPageTitle: 'QA Playground Report',
-  embeddedScreenshots: true,
-  inlineAssets: true
-},
-e2e: {
-  setupNodeEvents(on, config) {
-    require('cypress-mochawesome-reporter/plugin')(on);
-  },
-},
-3. No cypress/support/e2e.js:
+### 1. Clone o repositório
+```bash
+git clone https://github.com/QA-Impact/teste-ci-cd.git
+cd teste-ci-cd
+```
 
-import 'cypress-mochawesome-reporter/register';
-4. Script:
+### 2. Instale as dependências
+```bash
+npm install
+```
 
-"scripts": {
-  "test": "cypress run",
-  "report": "npx mochawesome-merge cypress/results/*.json | npx mochawesome-report-generator --reportDir cypress/report --reportFilename index.html"
-}
+### 3. Execute os testes
+```bash
+npx cypress run
+# ou para abrir a interface gráfica:
+npx cypress open
+```
+
+## 👤 Autor
+**IMPACTA** – Projeto educacional e experimental para demonstrações de automação de testes.
+
+---
+
+## 📄 Licença
+Este projeto está sob a licença MIT.

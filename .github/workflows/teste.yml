@@ -27,8 +27,7 @@ jobs:
 
       - name: Executar testes
         run: npm run test
-        continue-on-error: true
-
+  
       - name: Gerar relatório Allure
         run: npm run report:generate
 
