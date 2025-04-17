@@ -3,7 +3,11 @@
 describe('Testes End to end - QA Playground', () => {
 
     beforeEach(() => {
-        cy.visit('https://qa-impact.github.io/playground-html')
+        cy.visit('playground-html')
+    });
+
+    afterEach(() => {
+        cy.screenshot()
     });
     
     it('Deve preencher o formulário com sucesso', () => {
