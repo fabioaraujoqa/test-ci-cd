@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
 
-describe('Testes End to end - QA Playground', () => {
+describe('Testes End to end - QA Playground no Cypress', () => {
 
     beforeEach(() => {
         cy.visit('playground-html')
@@ -8,6 +8,10 @@ describe('Testes End to end - QA Playground', () => {
 
     afterEach(() => {
         cy.screenshot()
+    });
+
+    it('Teste novo', () => {
+        cy.log("Teste passando")
     });
     
     it('Deve preencher o formulário com sucesso', () => {
