@@ -28,11 +28,11 @@ jobs:
             - name: Gerar relatório do Allure
               run: npm run report-ci
 
-            - name: Publicar relatório do Allure
+            - name: Publicar relatório no GH Pages
               uses: peaceiris/actions-gh-pages@v4
               with:
                 github_token: ${{ secrets.GITHUB_TOKEN }}
-                publish_dir: allure-results
-              
+                publish_dir: ./allure-results
+
         
     
