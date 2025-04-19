@@ -10,7 +10,7 @@ describe('Testes End to end - QA Playground no Cypress', () => {
         cy.screenshot()
     });
 
-    it('Teste novo', () => {
+    it.only('Teste novo', () => {
         cy.log("Teste passando")
     });
     
