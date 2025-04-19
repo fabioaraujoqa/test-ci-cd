@@ -1,0 +1,7 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","568","Deve exibir mensagem de erro quando não preencher o campo nome","Testes End to end - QA Playground no Cypress","Sat Apr 19 20:57:09 UTC 2025","passed","Sat Apr 19 20:57:10 UTC 2025","","","",""
+"","591","Deve exibir mensagem de erro quando não preencher o campo Idade","Testes End to end - QA Playground no Cypress","Sat Apr 19 20:57:12 UTC 2025","passed","Sat Apr 19 20:57:12 UTC 2025","","","",""
+"","954","Deve preencher o formulário com sucesso","Testes End to end - QA Playground no Cypress","Sat Apr 19 20:57:08 UTC 2025","passed","Sat Apr 19 20:57:08 UTC 2025","","","",""
+"","123","Deve ativar e validar o modo de alto contraste","Testes End to end - QA Playground no Cypress","Sat Apr 19 20:57:14 UTC 2025","passed","Sat Apr 19 20:57:14 UTC 2025","","","",""
+"","676","Deve exibir mensagem de erro quando preencher e-mail com formato inválido","Testes End to end - QA Playground no Cypress","Sat Apr 19 20:57:13 UTC 2025","passed","Sat Apr 19 20:57:14 UTC 2025","","","",""
+"","452","Deve exibir mensagem de erro quando não preencher o campo e-mail","Testes End to end - QA Playground no Cypress","Sat Apr 19 20:57:11 UTC 2025","passed","Sat Apr 19 20:57:11 UTC 2025","","","",""
